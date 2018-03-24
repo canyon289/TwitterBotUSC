@@ -2,8 +2,12 @@
 import tweepy
 import json
 import time
-
+import os
 # Twitter API Keys
+consumer_key = os.environ['consumer_key']
+consumer_secret = os.environ['consumer_secret']
+access_token = os.environ['access_token']
+access_token_secret = os.environ['access_token_secret']
 
 # Setup Tweepy API Authentication
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -25,7 +29,7 @@ counter = 0
 while(True):
 
     # Call the TweetQuotes function and specify the tweet number
-    TweetOut(counter)
+    TweetOut("Hello Class {}".format(counter))
 
     # Once tweeted, wait 60 seconds before doing anything else
     time.sleep(60)
